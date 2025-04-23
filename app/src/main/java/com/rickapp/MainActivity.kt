@@ -1,6 +1,7 @@
 package com.rickapp
 
 import android.os.Bundle
+import android.transition.Fade
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -16,5 +17,15 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+        setActivityAnimation()
+
+    }
+
+    fun setActivityAnimation() {
+        val fadeIn = Fade().apply {
+            duration = 2000
+        }
+
+        window.enterTransition = fadeIn
     }
 }
