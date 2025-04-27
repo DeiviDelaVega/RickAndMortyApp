@@ -47,7 +47,7 @@ class SplashActivity : AppCompatActivity() {
             var mediaPlayer = MediaPlayer.create(this, R.raw.sound_rick)
             mediaPlayer.start()
 
-            val intento = Intent(this, MainActivity::class.java)
+            val intento = Intent(this, HomeActivity::class.java)
             val options = ActivityOptions.makeSceneTransitionAnimation(this)
             startActivity(intento, options.toBundle())
 
