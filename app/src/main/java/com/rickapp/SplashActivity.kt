@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.rickapp.databinding.ActivitySplashBinding
+import com.rickapp.util.createFade
 
 class SplashActivity : AppCompatActivity() {
 
@@ -33,11 +34,8 @@ class SplashActivity : AppCompatActivity() {
         setOnClick()
     }
 
-    fun setActivityAnimation() {
-        val fadeOut = Fade().apply {
-            duration = 2000
-        }
-
+      fun setActivityAnimation() {
+       val fadeOut = createFade()
         window.exitTransition = fadeOut
     }
 

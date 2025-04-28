@@ -6,26 +6,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".HomeActivity"
-    >
+    tools:context=".HomeActivity">
 
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="match_parent"
         android:layout_height="120dp"
-        app:srcCompat="@drawable/characters_text" />
+        app:srcCompat="@drawable/characters_text"/>
 
     <androidx.recyclerview.widget.RecyclerView
-
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:listitem="@layout/layout_desing_card"
         tools:layoutAnimation="@null"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-        app:spanCount="3"
-        />
-
-
-
+        app:spanCount="3"/>
 </LinearLayout>

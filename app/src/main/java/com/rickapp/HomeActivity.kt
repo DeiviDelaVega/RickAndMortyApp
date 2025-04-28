@@ -7,11 +7,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.rickapp.adapter.Adapter
-import com.rickapp.adapter.Character
+import com.rickapp.model.Character
 import com.rickapp.databinding.ActivityHomeBinding
-import com.rickapp.databinding.ActivitySplashBinding
+import com.rickapp.util.createFade
 
 class HomeActivity : AppCompatActivity() {
 
@@ -29,25 +28,18 @@ class HomeActivity : AppCompatActivity() {
             insets
         }
         setActivityAnimation()
-        ContentRecycler()
+        configureRecycler()
     }
 
     fun setActivityAnimation() {
-        val fadeIn = Fade().apply {
-            duration = 2000
-        }
-
+        val fadeIn = createFade()
         window.enterTransition = fadeIn
     }
 
-    fun ContentRecycler() {
-
-
+    fun configureRecycler() {
 
         binding.recyclerView.layoutManager = GridLayoutManager(this, 2)
-
         binding.recyclerView.setHasFixedSize(true)
-
 
         var newArrayList: ArrayList<Character> = arrayListOf<Character>(
             Character("RICK1", R.drawable.rick_character),
@@ -61,9 +53,7 @@ class HomeActivity : AppCompatActivity() {
             Character("RICK9", R.drawable.rick_character),
             Character("RICK10", R.drawable.rick_character),
         )
-
         binding.recyclerView.adapter = Adapter(newArrayList)
-
     }
 
 }

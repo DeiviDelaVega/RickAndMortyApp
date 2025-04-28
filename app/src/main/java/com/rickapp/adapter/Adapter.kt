@@ -5,6 +5,8 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.rickapp.databinding.LayoutDesingCardBinding
+import com.rickapp.model.Character
+
 class Adapter(private val listCharacter: ArrayList<Character>) : RecyclerView.Adapter<Adapter.MyViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
